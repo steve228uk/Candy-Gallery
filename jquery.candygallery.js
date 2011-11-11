@@ -2,8 +2,8 @@
 *	Candy Gallery			
 *
 *	@author:			Stephen Radford, Creare Web Design http://www.webdesigncreare.co.uk
-*	@version:			1.2
-*	@Last Update:		04.04.2011
+*	@version:			1.2.1
+*	@Last Update:		11.11.2011
 *	@licence:			MIT (http://www.opensource.org/licenses/mit-license.php)
 *						GPL	(http://www.gnu.org/licenses/gpl.html)
 *	@documentation:		{to come}
@@ -43,8 +43,8 @@ $.fn.candygallery = function(options) {
 	$('<img src="'+ img +'" />').appendTo('#big-image');
 	
 	if (options.title == "true") {
-		$('<div id="gallery-title"></div>').appendTo(obj);
-		$('#gallery-title').text($('#gallery-ul > li:first-child > img').attr('alt'));	
+		$('<div id="gallery-title"></div>').appendTo('#big-image');
+		$('#gallery-title').text($('#gallery-ul > li:first-child > img').attr('alt'));
 	}
 	
 	$('#big-image > img').attr('width', options.maxwidth);
@@ -58,7 +58,7 @@ $.fn.candygallery = function(options) {
 	if (options.changeon == 'click') {
 		$('#gallery-ul > li > img').click(function() {
 			var title = $(this).attr('alt');
-			$('#big-image').empty();
+			$('#big-image > img').remove();
 			$(this).clone().appendTo($('#big-image'));
 			$('#big-image > img').attr('width', options.maxwidth);
 			$('.active-thumb').removeClass('active-thumb');
@@ -71,7 +71,7 @@ $.fn.candygallery = function(options) {
 	else if (options.changeon == 'hover') {
 		$('#gallery-ul > li > img').hover(function() {
 			var title = $(this).attr('alt');
-			$('#big-image').empty();
+			$('#big-image > img').remove();
 			$(this).clone().appendTo($('#big-image'));
 			$('#big-image > img').attr('width', options.maxwidth);
 			$('.active-thumb').removeClass('active-thumb');
