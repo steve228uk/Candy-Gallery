@@ -1,0 +1,129 @@
+/* @group THUMBS RIGHT */
+
+div#gallery{
+	background: #5c5863;
+	width: 100%;
+	margin: auto;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+ul#gallery-ul li{
+	overflow: hidden;
+	margin-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #fff;
+	cursor: pointer;
+}
+
+ul#gallery-ul li{
+	overflow: hidden;
+	margin-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #fff;
+}
+
+ul#gallery-ul li.active-thumb{
+	opacity: 1 !important;
+}
+
+div#big-image{
+	float: left;
+	margin: 10px 0 0 10px;
+}
+
+div#big-image img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #fff;
+}
+
+ul#gallery-ul{
+	float: right;
+	margin: 10px 10px 5px 0;
+}
+
+#gallery-title{
+	color: #fff;
+	float: left;
+	clear: left;
+	margin: 15px 0 0 10px;
+	font: 1.6em "Pacifico", Arial, Helvetica, Geneva, sans-serif;
+	text-shadow: 0 1px 1px #000;
+}
+
+/* @end */
+
+/* @group BELOW */
+
+div#gallery{
+	background: #5c5863;
+	width: 100%;
+	margin: auto;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+ul#gallery-ul{
+	margin-left: 10px;
+	padding:8px 0 10px;
+	clear: both;
+}
+
+ul#gallery-ul:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+ul#gallery-ul li{
+	overflow: hidden;
+	margin-right: 16px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #fff;
+	float: left;
+	cursor: pointer;
+}
+
+ul#gallery-ul li:last-child{
+	margin: 0;
+}
+
+ul#gallery-ul li.active-thumb{
+	opacity: 1 !important;
+}
+
+div#big-image{
+	float: left;
+	margin: 10px 0 0 10px;
+}
+
+div#big-image img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #fff;
+}
+
+#gallery-title{
+	color: #fff;
+	float: left;
+	clear: left;
+	margin: 15px 0 0 10px;
+	font: 1.6em "Pacifico", Arial, Helvetica, Geneva, sans-serif;
+	text-shadow: 0 1px 1px #000;
+	
+}
+
+/* @end */
