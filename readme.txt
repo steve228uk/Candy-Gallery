@@ -23,8 +23,10 @@ If you want to customise the default options…
 			maxwidth:		203, // max image width in pixels
 			thumbwidth:		50, // thumbnail width and height
 			thumbopacity:	0.7,  // opacity of thumbnail
-			title: 'true' // whether to show title or not
-			changeon: 'click' // whether to change image on click or hover
+			title: 'true', // whether to show title or not
+			changeon: 'click', // whether to change image on click or hover
+			fade: 'true', // whether there is a fade transition or not
+			fade speed: '500' // transition speed in ms
 		});
 	});
 </script>
