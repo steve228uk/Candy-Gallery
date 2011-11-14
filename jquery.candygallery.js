@@ -2,8 +2,8 @@
 *	Candy Gallery			
 *
 *	@author:			Stephen Radford, Creare Web Design http://www.webdesigncreare.co.uk
-*	@version:			1.2.1
-*	@Last Update:		11.11.2011
+*	@version:			1.2.2
+*	@Last Update:		14.11.2011
 *	@licence:			MIT (http://www.opensource.org/licenses/mit-license.php)
 *						GPL	(http://www.gnu.org/licenses/gpl.html)
 *	@documentation:		{to come}
@@ -20,7 +20,9 @@ $.fn.candygallery = function(options) {
     thumbopacity:	0.7,
     title: 'true',
     changeon: 'click',
-    thumbposition: 'after'
+    thumbposition: 'after',
+    fade: 'true',
+    fadespeed: 500
   }; 
  
   var options = $.extend({}, defaults, options); 
@@ -58,9 +60,29 @@ $.fn.candygallery = function(options) {
 	if (options.changeon == 'click') {
 		$('#gallery-ul > li > img').click(function() {
 			var title = $(this).attr('alt');
-			$('#big-image > img').remove();
-			$(this).clone().appendTo($('#big-image'));
-			$('#big-image > img').attr('width', options.maxwidth);
+			var image = $(this);
+			
+			if (options.fade == 'true') {
+				$('#big-image > img').addClass('del-me');
+				$('.del-me').css({
+					'position': 'relative',
+					'z-index': '2'
+				});
+				$(image).clone().appendTo($('#big-image'));
+				$('.del-me').siblings('img').addClass('temp');
+				$('.del-me').fadeOut(options.fadespeed, function() {
+					$(this).remove();
+					$('.temp').removeClass('temp');
+				});
+				$('#big-image > img').attr('width', options.maxwidth);
+			}
+			
+			else {
+				$('#big-image > img').remove();
+				$(image).clone().appendTo($('#big-image'));
+				$('#big-image > img').attr('width', options.maxwidth);
+			}
+				
 			$('.active-thumb').removeClass('active-thumb');
 			$(this).parent().addClass('active-thumb');
 			$('#gallery-title').text('');
