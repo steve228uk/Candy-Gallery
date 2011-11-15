@@ -1,7 +1,7 @@
 /*
 *	Candy Gallery			
 *
-*	@author:			Stephen Radford, Creare Web Design http://www.webdesigncreare.co.uk
+*	@author:			Stephen Radford, Twitter: @steve228uk
 *	@version:			1.3.2
 *	@Last Update:		15.11.2011
 *	@licence:			MIT (http://www.opensource.org/licenses/mit-license.php)
