@@ -2,7 +2,7 @@
 *	Candy Gallery			
 *
 *	@author:			Stephen Radford, Creare Web Design http://www.webdesigncreare.co.uk
-*	@version:			1.3
+*	@version:			1.3.1
 *	@Last Update:		14.11.2011
 *	@licence:			MIT (http://www.opensource.org/licenses/mit-license.php)
 *						GPL	(http://www.gnu.org/licenses/gpl.html)
@@ -31,7 +31,7 @@ $.fn.candygallery = function(options) {
   
     obj = $(this);   
 	var img = $(obj).children('img:first-child').attr('src');
-	var twidth = options.thumbwidth + 100;
+	var twidth = parseFloat(options.thumbwidth) + 50;
 	
 	$(obj).children('img').wrap('<li />');
 	$(obj).children('li').wrapAll('<ul id="gallery-ul" />');
