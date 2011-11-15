@@ -95,7 +95,7 @@ $.fn.candygallery = function(options) {
 				$(bigimg).children('img').attr('width', options.maxwidth);
 			}
 				
-			$('.active-thumb').removeClass('active-thumb');
+			$(thumbs).children('.active-thumb').removeClass('active-thumb');
 			$(this).parent().addClass('active-thumb');
 			$(galtitle).text('');
 			$(galtitle).text(title);
@@ -128,7 +128,7 @@ $.fn.candygallery = function(options) {
 				$(bigimg).children('img').attr('width', options.maxwidth);
 			}
 				
-			$('.active-thumb').removeClass('active-thumb');
+			$(thumbs).childen('.active-thumb').removeClass('active-thumb');
 			$(this).parent().addClass('active-thumb');
 			$(galtitle).text('');
 			$(galtitle).text(title);
