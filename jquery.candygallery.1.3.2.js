@@ -2,8 +2,8 @@
 *	Candy Gallery			
 *
 *	@author:			Stephen Radford, Creare Web Design http://www.webdesigncreare.co.uk
-*	@version:			1.3.1
-*	@Last Update:		14.11.2011
+*	@version:			1.3.2
+*	@Last Update:		15.11.2011
 *	@licence:			MIT (http://www.opensource.org/licenses/mit-license.php)
 *						GPL	(http://www.gnu.org/licenses/gpl.html)
 *	@documentation:		{to come}
@@ -34,92 +34,104 @@ $.fn.candygallery = function(options) {
 	var twidth = parseFloat(options.thumbwidth) + 50;
 	
 	$(obj).children('img').wrap('<li />');
-	$(obj).children('li').wrapAll('<ul id="gallery-ul" />');
-	$('#gallery-ul > li > img').attr('width', twidth);
+	$(obj).children('li').wrapAll('<ul class="gallery-ul" />');
+	
+	var thumbs = $(obj).children('.gallery-ul');
+	var thumbimg = $(obj).children('.gallery-ul').children('li').children('img');
+	var thumbli = $(obj).children('.gallery-ul').children('li');
+	
+	$(thumbimg).attr('width', twidth);
+	
 	if (options.thumbposition == 'after') {
-		$('#gallery-ul').before('<div id="big-image"></div>');
+		$(thumbs).before('<div class="big-image"></div>');
 	}
-	if (options.thumbposition == 'before') {
-		$('#gallery-ul').after('<div id="big-image"></div>');
+	else if (options.thumbposition == 'before') {
+		$(thumbs).after('<div class="big-image"></div>');
 	}
-	$('<img src="'+ img +'" />').appendTo('#big-image');
+	
+	var bigimg = $(obj).children('.big-image');
+	
+	$('<img src="'+ img +'" />').appendTo(bigimg);
 	
 	if (options.title == "true") {
-		$('<div id="gallery-title"></div>').appendTo('#big-image');
-		$('#gallery-title').text($('#gallery-ul > li:first-child > img').attr('alt'));
+		$('<div class="gallery-title"></div>').appendTo(bigimg);
+		var galtitle = $(bigimg).children('.gallery-title');
+		var firsttitle = $(thumbs).children('li:first-child').children('img').attr('alt');
+		$(galtitle).text(firsttitle);
 	}
 	
-	$('#big-image > img').attr('width', options.maxwidth);
-	$('#gallery-ul > li').css({
+	$(bigimg).children('img').attr('width', options.maxwidth);
+	$(thumbli).css({
 		'width': options.thumbwidth +'px',
 		'height': options.thumbwidth +'px',
 		'opacity': options.thumbopacity
 	});
-	$('#gallery-ul > li:first-child').addClass('active-thumb');
+	
+	$(thumbs).children('li:first-child').addClass('active-thumb');
 	
 	if (options.changeon == 'click') {
-		$('#gallery-ul > li > img').click(function() {
+		$(thumbimg).click(function() {
 			var title = $(this).attr('alt');
 			var image = $(this);
 			
 			if (options.fade == 'true') {
-				$('#big-image > img').addClass('del-me').stop(true,true);
+				$(bigimg).children('img').addClass('del-me').stop(true,true);
 				$('.del-me').css({
 					'position': 'relative',
 					'z-index': '2'
 				});
-				$(image).clone().appendTo($('#big-image'));
+				$(image).clone().appendTo(bigimg);
 				$('.del-me').siblings('img').addClass('temp');
 				$('.del-me').fadeOut(options.fadespeed, function() {
 					$(this).remove();
 					$('.temp').removeClass('temp');
 				});
-				$('#big-image > img').attr('width', options.maxwidth);
+				$(bigimg).children('img').attr('width', options.maxwidth);
 			}
 			
 			else {
-				$('#big-image > img').remove();
-				$(image).clone().appendTo($('#big-image'));
-				$('#big-image > img').attr('width', options.maxwidth);
+				$(bigimg).children('img').remove();
+				$(image).clone().appendTo(bigimg);
+				$(bigimg).children('img').attr('width', options.maxwidth);
 			}
 				
 			$('.active-thumb').removeClass('active-thumb');
 			$(this).parent().addClass('active-thumb');
-			$('#gallery-title').text('');
-			$('#gallery-title').text(title);
+			$(galtitle).text('');
+			$(galtitle).text(title);
 		});
 	}
 	
 	else if (options.changeon == 'hover') {
-		$('#gallery-ul > li > img').hover(function() {
+		$(thumbimg).hover(function() {
 			var title = $(this).attr('alt');
 			var image = $(this);
 			
 			if (options.fade == 'true') {
-				$('#big-image > img').addClass('del-me').stop(true,true);
+				$(bigimg).children('img').addClass('del-me').stop(true,true);
 				$('.del-me').css({
 					'position': 'relative',
 					'z-index': '2'
 				});
-				$(image).clone().appendTo($('#big-image'));
+				$(image).clone().appendTo(bigimg);
 				$('.del-me').siblings('img').addClass('temp');
 				$('.del-me').fadeOut(options.fadespeed, function() {
 					$(this).remove();
 					$('.temp').removeClass('temp');
 				});
-				$('#big-image > img').attr('width', options.maxwidth);
+				$(bigimg).children('img').attr('width', options.maxwidth);
 			}
 			
 			else {
-				$('#big-image > img').remove();
-				$(image).clone().appendTo($('#big-image'));
-				$('#big-image > img').attr('width', options.maxwidth);
+				$(bigimg).children('img').remove();
+				$(image).clone().appendTo(bigimg);
+				$(bigimg).children('img').attr('width', options.maxwidth);
 			}
 				
 			$('.active-thumb').removeClass('active-thumb');
 			$(this).parent().addClass('active-thumb');
-			$('#gallery-title').text('');
-			$('#gallery-title').text(title);
+			$(galtitle).text('');
+			$(galtitle).text(title);
 		});
 	}
 	
