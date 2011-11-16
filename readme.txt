@@ -1,5 +1,3 @@
-
-
 HELLO :D
 
 Candy gallery is extremely simple to use, include jquery.candygallery.min.js and jquery.candygallery.css in your <head>
@@ -26,7 +24,7 @@ If you want to customise the default options…
 			title: 'true', // whether to show title or not
 			changeon: 'click', // whether to change image on click or hover
 			fade: 'true', // whether there is a fade transition or not
-			fade speed: '500' // transition speed in ms
+			fadespeed: '500' // transition speed in ms
 		});
 	});
 </script>
