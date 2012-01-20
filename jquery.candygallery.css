@@ -89,3 +89,35 @@ div.big-image img{
 	top: 0;
 	left: 0;
 }
+
+.big-image:hover .candy-next, .big-image:hover .candy-prev{
+	height: auto;
+	padding: 10px;
+	text-indent: 0;
+}
+
+.candy-next{
+	position: absolute;
+	top: 40%;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	color: #fff !important;
+	text-decoration: none;
+	z-index: 10;
+	height: 0;
+	padding: 0;
+	text-indent: -99999em;
+}
+
+.candy-prev{
+	position: absolute;
+	top: 40%;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	color: #fff !important;
+	text-decoration: none;
+	z-index: 10;
+	height: 0;
+	padding: 0;
+	text-indent: -99999em
+}

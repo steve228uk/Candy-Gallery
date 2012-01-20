@@ -21,10 +21,14 @@ If you want to customise the default options…
 			maxwidth:		203, // max image width in pixels
 			thumbwidth:		50, // thumbnail width and height
 			thumbopacity:	0.7,  // opacity of thumbnail
+			thumbposition: 'after', // Where to append the thumbnails
 			title: 'true', // whether to show title or not
 			changeon: 'click', // whether to change image on click or hover
 			fade: 'true', // whether there is a fade transition or not
-			fadespeed: '500' // transition speed in ms
+			fadespeed: '500', // transition speed in ms
+			nav: 'true', // Whether to include the pagination or not
+			nexttext: '&rarr;', // Next image text
+			prevtext: '&larr;' // Previous Image link text
 		});
 	});
 </script>
