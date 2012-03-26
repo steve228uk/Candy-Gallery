@@ -2,7 +2,7 @@
 *	Candy Gallery			
 *
 *	@author:			Stephen Radford, Twitter: @steve228uk
-*	@version:			1.4
+*	@version:			1.5
 *	@Last Update:		19.01.2012
 *	@licence:			MIT (http://www.opensource.org/licenses/mit-license.php)
 *						GPL	(http://www.gnu.org/licenses/gpl.html)
@@ -25,7 +25,9 @@ $.fn.candygallery = function(options) {
     fadespeed: 500,
     nav: 'true',
     nexttext: '&rarr;',
-    prevtext: '&larr;'
+    prevtext: '&larr;',
+    auto: 'true',
+    timeout: 3000
   }; 
  
   var options = $.extend({}, defaults, options); 
@@ -163,6 +165,45 @@ $.fn.candygallery = function(options) {
 	if (options.changeon == "click") { $(thumbimg).click(function() { $(this).trigger('changeimg'); });}
 	else { $(thumbimg).hover(function() { $(this).trigger('changeimg'); }); }
 	
+	if (options.auto == 'true') {
+		
+		setInterval(autoNext, options.timeout);
+		
+		function autoNext(){
+			
+			var title = $(thumbs).children('.active-thumb').next('li').children('img').attr('alt');
+			var image = $(thumbs).children('.active-thumb').next('li').children('img');
+			
+			if ($('.active-thumb').attr('id') == 'candy-last') { var image = $(thumbs).children('li:first').children('img'); }
+			
+			$(bigimg).children('.candy-prev').show();
+			
+			if (options.fade == 'true') {
+				$(bigimg).children('img').addClass('del-me').stop(true,true);
+				$('.del-me').css({
+					'position': 'relative',
+					'z-index': '2'
+				});
+				$(image).clone().appendTo(bigimg);
+				$('.del-me').siblings('img').addClass('temp');
+				$('.del-me').fadeOut(options.fadespeed, function() {
+					$(this).remove();
+					$('.temp').removeClass('temp');
+				});
+				$(bigimg).children('img').attr('width', options.maxwidth);
+			}
+			
+			if (options.title == 'true') {
+				var galtitle = $(bigimg).children('.gallery-title');
+				$(galtitle).text(title);
+			}
+			
+			$(thumbs).children('.active-thumb').removeClass('active-thumb');
+			$(image).parent().addClass('active-thumb');
+			
+				
+		}
+	}
 	
   }); 
 };
