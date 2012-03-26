@@ -4,16 +4,19 @@ Candy gallery is extremely simple to use, include jquery.candygallery.min.js and
 
 ## The Include
 
-`<link rel="stylesheet" href="jquery.candygallery.css" type="text/css" />`
-`<script src="jquery.candygallery.min.js" type="text/javascript"></script>`
+`<link rel="stylesheet" href="jquery.candygallery.css" type="text/css" />
+<script src="jquery.candygallery.min.js" type="text/javascript"></script>`
 
 ## The Call
 
-`<script type="text/javascript">`
-	`$(document).ready(function() {`
-	`	$('#myId').candygallery();`
-	`});`
-`</script>`
+`<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		$('#myId').candygallery();
+
+	});
+</script>`
 
 If you want to customise the default options…
 
