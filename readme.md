@@ -1,21 +1,23 @@
-HELLO :D
+# Candy Gallery
 
 Candy gallery is extremely simple to use, include jquery.candygallery.min.js and jquery.candygallery.css in your <head>
 
-<link rel="stylesheet" href="jquery.candygallery.css" type="text/css" />
-<script src="jquery.candygallery.min.js" type="text/javascript"></script>
+## The Include
 
-Then call it and attach it to your element of choice. 
+`<link rel="stylesheet" href="jquery.candygallery.css" type="text/css" />
+<script src="jquery.candygallery.min.js" type="text/javascript"></script>`
 
-<script type="text/javascript">
+## The Call
+
+`<script type="text/javascript">
 	$(document).ready(function() {
 		$('#myId').candygallery();
 	});
-</script>
+</script>`
 
 If you want to customise the default options…
 
-<script type="text/javascript">
+`<script type="text/javascript">
 	$(document).ready(function() {
 		$('#myId').candygallery({
 			maxwidth:		203, // max image width in pixels
@@ -29,19 +31,21 @@ If you want to customise the default options…
 			nav: 'true', // Whether to include the pagination or not
 			nexttext: '&rarr;', // Next image text
 			prevtext: '&larr;' // Previous Image link text
+			auto: 'true' // Whether to auto increment
+			timeout: 1500 // Time between auto
 		});
 	});
-</script>
+</script>`
 
 
-The HTML is as follows:
+## Markup
 
-<div id="myId">
+`<div id="myId">
 	<img src="images/image1.jpg" alt="Title 1" />
 	<img src="images/image1.jpg" alt="Title 2" />
 	<img src="images/image1.jpg" alt="Title 3" />
 	<img src="images/image1.jpg" alt="Title 4" />
-</div>
+</div>`
 
 You can style it however you like, rearrange the thumbnails etc.
 
