@@ -114,8 +114,10 @@ $.fn.candygallery = function(options) {
 		
 		$(bigimg).children('.candy-next').click(function() {			
 			
-			clearInterval(timer);
-			timer = setInterval(autoNext, options.timeout);
+			if (options.auto == 'true') {
+				clearInterval(timer);
+				timer = setInterval(autoNext, options.timeout);
+			}
 			
 			var title = $(thumbs).children('.active-thumb').next('li').children('img').attr('alt');
 			var image = $(thumbs).children('.active-thumb').next('li').children('img');
@@ -153,8 +155,10 @@ $.fn.candygallery = function(options) {
 		
 		$(bigimg).children('.candy-prev').click(function() {			
 			
-			clearInterval(timer);
-			timer = setInterval(autoNext, options.timeout);
+			if (options.auto == 'true') {
+				clearInterval(timer);
+				timer = setInterval(autoNext, options.timeout);
+			}
 			
 			var title = $(thumbs).children('.active-thumb').prev('li').children('img').attr('alt');
 			var image = $(thumbs).children('.active-thumb').prev('li').children('img');
@@ -198,8 +202,10 @@ $.fn.candygallery = function(options) {
 
 	$(thumbimg).bind('changeimg',function() {
 		
-		clearInterval(timer);
-		timer = setInterval(autoNext, options.timeout);
+		if (options.auto == 'true') {
+			clearInterval(timer);
+			timer = setInterval(autoNext, options.timeout);
+		}
 			
 		var title = $(this).attr('alt');
 		var image = $(this);
