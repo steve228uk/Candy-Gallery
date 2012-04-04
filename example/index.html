@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CandyGallery Example</title>
+	
+	<!-- DEMO SPECIFIC STYLES -->
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+	
+	<!-- INCLUDE jQUERY GALLERY STYLES -->
+	<link rel="stylesheet" href="../jquery.candygallery.css" type="text/css" />
+	
+	<!-- INCLUDE jQUERY AND CANDY GALLERY SCRIPTS -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.candygallery.1.5.1.js"></script>
+	
+	<!-- ATTACH CANDYGALLERY TO ELEMENT -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+			// AUTO WITH TITLES, NAV FALSE
+			$('#gallery1').candygallery({
+				maxwidth:		640, // max image width in pixels
+				thumbwidth:		80, // thumbnail width and height
+				thumbopacity:	0.7,  // opacity of thumbnail
+				thumbposition: 'after', // Where to append the thumbnails
+				title: 'true', // whether to show title or not
+				changeon: 'click', // whether to change image on click or hover
+				fade: 'true', // whether there is a fade transition or not
+				fadespeed: '500', // transition speed in ms
+				nav: 'false', // Whether to include the pagination or not
+				auto: 'true', // Whether to auto increment
+				timeout: 3000 // Time between auto
+			});
+			
+			$('#gallery2').candygallery({
+				maxwidth:		640, // max image width in pixels
+				thumbwidth:		80, // thumbnail width and height
+				thumbopacity:	0.7,  // opacity of thumbnail
+				thumbposition: 'after', // Where to append the thumbnails
+				title: 'true', // whether to show title or not
+				changeon: 'click', // whether to change image on click or hover
+				fade: 'false', // whether there is a fade transition or not
+				fadespeed: '500', // transition speed in ms
+				nav: 'true', // Whether to include the pagination or not
+				auto: 'false', // Whether to auto increment
+			});
+			
+			
+		});
+	</script>
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="container" class="clearfix">
+		
+		<h1>CandyGallery</h1>
+		<p>
+			CandyGallery is a lightweight, easy to use jQuery gallery.
+		</p>
+		
+		<h2>Gallery 1 With Auto Enabled</h2>
+		
+		<div id="gallery1">
+			<img src="images/image1.jpg" alt="Alphabeat" />
+			<img src="images/image2.jpg" alt="Fluffy Snow" />
+			<img src="images/image3.jpg" alt="It's a Bug's Life" />
+			<img src="images/image4.jpg" alt="Tactics At Play" />
+			<img src="images/image5.jpg" alt="Fred" />
+			<img src="images/image6.jpg" alt="Levitation" />
+			<img src="images/image7.jpg" alt="Falling Leaves" />
+			<img src="images/image8.jpg" alt="Docked For The Night" />
+		</div>
+		
+		<h2>Gallery 2 With Auto &amp; Fade Disabled and Nav Enabled</h2>
+		
+		<div id="gallery2">
+			<img src="images/image1.jpg" alt="Alphabeat" />
+			<img src="images/image2.jpg" alt="Fluffy Snow" />
+			<img src="images/image3.jpg" alt="It's a Bug's Life" />
+			<img src="images/image4.jpg" alt="Tactics At Play" />
+			<img src="images/image5.jpg" alt="Fred" />
+			<img src="images/image6.jpg" alt="Levitation" />
+			<img src="images/image7.jpg" alt="Falling Leaves" />
+			<img src="images/image8.jpg" alt="Docked For The Night" />
+		</div>
+		
+	</div>
+</body>
+</html>

@@ -30,8 +30,8 @@ If you want to customise the default options…
 			    fadespeed: '500', // transition speed in ms
 			    nav: 'true', // Whether to include the pagination or not
 			    nexttext: '&rarr;', // Next image text
-			    prevtext: '&larr;' // Previous Image link text
-			    auto: 'true' // Whether to auto increment
+			    prevtext: '&larr;', // Previous Image link text
+			    auto: 'true', // Whether to auto increment
 			    timeout: 1500 // Time between auto
 		    });
     	});
