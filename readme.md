@@ -1,11 +1,11 @@
 # Candy Gallery
 
-Candy gallery is extremely simple to use, include jquery.candygallery.min.js and jquery.candygallery.css in your <head>
+Candy gallery is extremely simple to use, include jquery.candygallery.1.5.1.min.js and jquery.candygallery.css in your <head>
 
 ## The Include
 
     <link rel="stylesheet" href="jquery.candygallery.css" type="text/css" />
-    <script src="jquery.candygallery.min.js" type="text/javascript"></script>
+    <script src="jquery.candygallery.1.5.1.min.js" type="text/javascript"></script>
 
 ## The Call
 
