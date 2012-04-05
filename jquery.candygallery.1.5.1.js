@@ -15,8 +15,8 @@
 
 $.fn.candygallery = function(options) { 
   var defaults = { 
-    maxwidth:		203,
-    thumbwidth:		50,
+    maxwidth:		640,
+    thumbwidth:		80,
     thumbopacity:	0.7,
     title: 'true',
     changeon: 'click',
@@ -70,7 +70,10 @@ $.fn.candygallery = function(options) {
 			var title = $(thumbs).children('.active-thumb').next('li').children('img').attr('alt');
 			var image = $(thumbs).children('.active-thumb').next('li').children('img');
 			
-			if ($(thumbs).children('.active-thumb').attr('id') == 'candy-last') { var image = $(thumbs).children('li:first').children('img'); }
+			if ($(thumbs).children('.active-thumb').attr('id') == 'candy-last') {
+				var image = $(thumbs).children('li:first').children('img');
+				var title = $(thumbs).children('li:first').children('img').attr('alt');
+			}
 			
 			$(bigimg).children('.candy-prev').show();
 			
@@ -122,7 +125,10 @@ $.fn.candygallery = function(options) {
 			var title = $(thumbs).children('.active-thumb').next('li').children('img').attr('alt');
 			var image = $(thumbs).children('.active-thumb').next('li').children('img');
 			
-			if ($(thumbs).children('.active-thumb').attr('id') == 'candy-last') { var image = $(thumbs).children('li:first').children('img'); }
+			if ($(thumbs).children('.active-thumb').attr('id') == 'candy-last') {
+				var image = $(thumbs).children('li:first').children('img');
+				var title = $(thumbs).children('li:first').children('img').attr('alt');
+			}
 			
 			if (options.fade == 'true') {
 				$(bigimg).children('img').addClass('del-me').stop(true,true);
@@ -163,7 +169,10 @@ $.fn.candygallery = function(options) {
 			var title = $(thumbs).children('.active-thumb').prev('li').children('img').attr('alt');
 			var image = $(thumbs).children('.active-thumb').prev('li').children('img');
 			
-			if ($(thumbs).children('.active-thumb').attr('id') == 'candy-first') { var image = $(thumbs).children('li:last').children('img'); }
+			if ($(thumbs).children('.active-thumb').attr('id') == 'candy-last') {
+				var image = $(thumbs).children('li:first').children('img');
+				var title = $(thumbs).children('li:first').children('img').attr('alt');
+			}
 			
 			var src = $(thumbs).children('.active-thumb').prev('li').children('img').attr('src');
 			
