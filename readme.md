@@ -20,8 +20,8 @@ If you want to customise the default options…
     <script type="text/javascript">
 	    $(document).ready(function() {
 		    $('#myId').candygallery({
-			    maxwidth:		203, // max image width in pixels
-			    thumbwidth:		50, // thumbnail width and height
+			    maxwidth:		640, // max image width in pixels
+			    thumbwidth:		60, // thumbnail width and height
 			    thumbopacity:	0.7,  // opacity of thumbnail
 			    thumbposition: 'after', // Where to append the thumbnails
 			    title: 'true', // whether to show title or not
